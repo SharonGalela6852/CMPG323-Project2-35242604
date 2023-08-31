@@ -11,16 +11,12 @@ The primary objective of these APIs is to manage logistics data effectively. Thi
 
 The overarching goal of the EcoPower Logistics project is to optimize logistics operations in the solar energy sector. By leveraging technology, efficient packaging, and API integration, the system aims to enhance customer experience, improve operational efficiency, and facilitate the secure and timely delivery of solar products to customers.
 
-## Creation of the API
-# CMPG323-Project-2---30586453
+**Project Goals**
+Develop a RESTful API that provides endpoints for managing logistics data efficiently.
+Implement CRUD operations to facilitate data manipulation and retrieval.
+Ensure proper API documentation and usage guidelines.
+Showcase the effective use of GitHub for version control, project management, and collaboration.
 
-![image](https://user-images.githubusercontent.com/84228144/188483008-6ec558ff-a0cd-4a83-b9d8-ddf3679dbb89.png)
-
-
-## About the Project:
-This is a Web API project that works together with a database called ConnectedOffice. This datase is a SQL Server database that is hosted on Azure. The database has three tables, namely; Categories, Devices, and Zone. 
-
-This API is fundamentally an IoT Device Management System keeps track of the whereabouts of all IoT devices deployed by the organisation. Depending on the type of organisation, different categories of devices are used. Each IoT device is initially categorised and registered. Then, IoT devices are deployed throughout the organisation's buildings in predefined zones. Administrators can view all IoT devices, update their properties, add new devices and move them to other zones.  
 
 ## Creation of the API
 ### Azure database
