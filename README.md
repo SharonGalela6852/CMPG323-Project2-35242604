@@ -12,66 +12,47 @@ The primary objective of these APIs is to manage logistics data effectively. Thi
 The overarching goal of the EcoPower Logistics project is to optimize logistics operations in the solar energy sector. By leveraging technology, efficient packaging, and API integration, the system aims to enhance customer experience, improve operational efficiency, and facilitate the secure and timely delivery of solar products to customers.
 
 ## Creation of the API
-Certainly, here's a more detailed guide on creating an API that interacts with an Azure SQL Database, along with simplified screenshots where applicable:
+# CMPG323-Project-2---30586453
 
-1. **Azure Account Setup:**
-   - Sign in to your Azure portal or create a new account if you don't have one.
-   - ![Azure Portal](https://example.com/azure_portal.png)
+![image](https://user-images.githubusercontent.com/84228144/188483008-6ec558ff-a0cd-4a83-b9d8-ddf3679dbb89.png)
 
-2. **Create an Azure SQL Database:**
-   - Click on "Create a resource" on the Azure portal dashboard.
-   - Search for "SQL Database" and select it.
-   - Follow the wizard to configure your database, including server settings, database name, pricing tier, and security settings.
-   - ![Create SQL Database](https://example.com/create_sql_db.png)
 
-3. **Get Database Connection Details:**
-   - Once your database is created, navigate to its overview page.
-   - Note down the server name, database name, and authentication details (username and password).
-   - ![Database Overview](https://example.com/db_overview.png)
+## About the Project:
+This is a Web API project that works together with a database called ConnectedOffice. This datase is a SQL Server database that is hosted on Azure. The database has three tables, namely; Categories, Devices, and Zone. 
 
-4. **Choose a Programming Language and Framework:**
-   - Decide on the programming language and framework you'll use. For example, let's use Node.js with Express.
+This API is fundamentally an IoT Device Management System keeps track of the whereabouts of all IoT devices deployed by the organisation. Depending on the type of organisation, different categories of devices are used. Each IoT device is initially categorised and registered. Then, IoT devices are deployed throughout the organisation's buildings in predefined zones. Administrators can view all IoT devices, update their properties, add new devices and move them to other zones.  
 
-5. **Set Up Your Development Environment:**
-   - Install Node.js and npm (Node Package Manager).
-   - Create a new directory for your project and run `npm init` to set up your project.
+## Creation of the API
+### Azure database
+Started off with creating an account on Azure and created a resource group, under which I added an SQL database and hosted my database there. I then added tables to the database via Sql Server Management Studio (SSMS). 
 
-6. **Install Required Dependencies:**
-   - Install necessary packages using `npm install express mssql` to connect to Azure SQL.
+![image](https://user-images.githubusercontent.com/84228144/188954455-9c9160fd-10b9-426a-9c1b-2e6dfefdff0a.png)
 
-7. **Connect to the Azure SQL Database:**
-   - Use the connection details to configure a connection to your Azure SQL Database.
-   - ![Database Connection](https://example.com/db_connection.png)
+### API creation
+I used visual studio to create the web API. Added controllers that will support the manipulation of tables in the database that is hosted on azure server. Thereafter I implemented security on the API so that no unauthorized user can get access to the API functionality.
 
-8. **Define API Endpoints:**
-   - Decide on the API endpoints you want to create, such as `/orders`, `/shipments`, etc.
-   - Use Express to set up routes that map to your endpoint functions.
+### Hosting the API
+I created an API Management Service on azure so that I could be able to work with it there. I then published the API via Visual Studio, and pulled it from the Azure side. 
 
-9. **Implement CRUD Operations:**
-   - Write code in your endpoint functions to perform CRUD operations using SQL queries.
-   - ![CRUD Operations](https://example.com/crud_operations.png)
+![image](https://user-images.githubusercontent.com/84228144/188955239-3eea68ed-1e7b-4681-9870-b87450945dc7.png)
 
-10. **Handle Data Validation and Serialization:**
-    - Use validation libraries or custom code to validate incoming data.
-    - Serialize your database responses into JSON format for API responses.
 
-11. **Test Your API:**
-    - Use Postman to test your API endpoints. Send sample requests and observe responses.
-    - ![Postman Test](https://example.com/postman_test.png)
+## Security:
+The API is secured in the sense not everyone has access to it right away. You must register an account in order to use the API to access and manipulate database data. This is a token based secure system. The server on which the database is hosted on is also secured, and those details are not accessible to everyone.
 
-12. **Implement Security Measures:**
-    - Implement authentication and authorization mechanisms using Azure Active Directory.
-    - Configure firewall rules on your Azure SQL Database to restrict access.
-    - ![Firewall Rules](https://example.com/firewall_rules.png)
+## Usage:
+Upon accessing the API, the user must register an account. Then the user may proceed to login. The user should request a token when accessing tables and manipulating data contained in those tables. The account that should be registered is the admin one because it is the only one that is authorized to access the tables.
 
-13. **Document Your API:**
-    - Create clear documentation explaining each endpoint's purpose, required parameters, and response formats.
-    - ![API Documentation](https://example.com/api_documentation.png)
+### Registering an account:
+The user must register an admin user because it is the only role that is authorized to access he tables and table manipulation.
 
-14. **Deployment:**
-    - Deploy your API to a service like Azure App Service.
-    - ![Deploy to Azure](https://example.com/deploy_to_azure.png)
+### Logging in:
+The user must click on the login button and insert the newly registered credentials.After logging in the user will receive the token. That token must be saved as will be used to access the tables since this system uses a tokeen based security.
 
-15. **Monitor and Maintain:**
-    - Utilize Azure's monitoring and logging tools to track your API's performance and usage.
-    - ![Azure Monitoring](https://example.com/azure_monitoring.png)
+### Working with tables:
+Before doing anything the user must click on the lock logo to get authorization to access the tables. A window will appear where they will need to type "Bearer" followed by the token they received when logging in. Thereafter the user can use the POST, GET, PUSH and more funtionalities of the system.
+
+## API Manager Endpoints:
+![Screenshot (29)](https://user-images.githubusercontent.com/84228144/189864338-c40f77bc-c986-4f54-99a1-3cf20537de72.png)
+
+
